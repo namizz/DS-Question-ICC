@@ -20,3 +20,6 @@ class Solution:
                 max = current_Answer
                 store = [i+1]
         return store
+p =Solution()
+print(p.maxScoreIndices([0,0,1,0]))
+
