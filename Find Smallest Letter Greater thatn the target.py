@@ -5,22 +5,13 @@ class Solution:
         right = len(letters)-1
         if letters[len(letters)-1] <= target:
             return letters[left]
-        while left <= right:
+        while left < right:
             mid = (left + right)//2
-            print(mid)
             if letters[mid] > target:
-                right = mid - 1
-            elif letters[mid] < target:
+                right = mid
+            else:
                 left = mid + 1
-            elif letters[mid] == target:
-                if letters[mid +1]== target:
-                    left += 1
-                else:
-                    return letters[mid+1]
-        if letters[mid] < target:
-            return letters[mid+1]
-        else:
-            return letters[mid]
+        return letters[right]
 
 p = Solution()
-print(p.nextGreatestLetter(["e","e","e","e","e","e"],"e"))
+print(p.nextGreatestLetter(["e","e","e","e","e","e","n","n","n","n"],"e"))
